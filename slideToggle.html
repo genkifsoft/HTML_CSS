@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+        .sub__menu > ul {
+            display: none;
+            z-index: 9999;
+            position: fixed;
+        }
+        li {
+            padding: 10px 0;
+            background-color: grey;
+            border:  1px solid #cccccc;
+        }
+        .sub__menu {
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Menu1</a></li>
+        <li><a href="#">Menu2</a></li>
+        <li class="sub__menu"><a href="#">Menu3</a>
+            <ul>
+                <li><a href="#">Submenu1</a></li>
+                <li><a href="#">Submenu2</a></li>
+                <li><a href="#">Submenu3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="c-text">
+        <h1>123</h1>
+        <h1>123</h1>
+        <h1>123</h1>
+        <h1>123</h1>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('.sub__menu').on('click', function() {
+            $(this).children('ul').slideToggle('slow'); 
+        });
+    })
+</script>
+</html>
